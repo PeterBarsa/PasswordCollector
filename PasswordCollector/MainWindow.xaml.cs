@@ -32,9 +32,10 @@ namespace PasswordCollector
             if (HandleRequests.Login(username, password))
             {
 
-                var newWindow = new PasswordHandler();
+
                 //sets a new sessionvariable with the users ID
                 Application.Current.Resources["currentUser"] = HandleRequests.SetCurrentUserId(username, password);
+                var newWindow = new PasswordHandler();
                 newWindow.Show();
                 Close();
 

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mime;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -34,13 +35,20 @@ namespace PasswordCollector
         {
             var search = TbSearchAdress.Text;
             var results = HandleRequests.Search(search);
-            LwPasswords.Items.Clear();
 
-            foreach (var item in results)
+            if (results.Any())
             {
-                LwPasswords.Items.Add(item);
-            }
+
+                LwPasswords.Items.Clear();
+
+                foreach (var item in results)
+                {
+                    LwPasswords.Items.Add(item);
+                }
             
+
+            }
+
 
         }
 
@@ -54,6 +62,33 @@ namespace PasswordCollector
             TbUsername.Clear();
             PbPassword.Clear();
             MessageBox.Show(returnMessage);
+        }
+
+        private void TbSearchAdress_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (TbSearchAdress.Text.Equals("Enter Adress:"))
+            {
+                
+            }
+            else
+            {
+
+                LwPasswords.Items.Clear();
+                var search = TbSearchAdress.Text;
+                var result = HandleRequests.AutoSearch(search);
+                if (result.Any())
+                {
+
+
+
+                    foreach (var item in result)
+                    {
+                        LwPasswords.Items.Add(item);
+                    }
+
+                }
+            }
+
         }
     }
 }

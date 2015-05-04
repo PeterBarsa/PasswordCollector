@@ -16,3 +16,4 @@ C:\Users\Peter\Documents\GitHub\PasswordCollector\DAL\bin\Debug\EntityFramework.
 C:\Users\Peter\Documents\GitHub\PasswordCollector\DAL\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Peter\Documents\GitHub\PasswordCollector\DAL\obj\Debug\DAL.dll
 C:\Users\Peter\Documents\GitHub\PasswordCollector\DAL\obj\Debug\DAL.pdb
+C:\Users\Peter\Documents\GitHub\PasswordCollector\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache

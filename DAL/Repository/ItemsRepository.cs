@@ -43,5 +43,22 @@ namespace DAL.Repository
 
         }
 
+        public static List<Item> AutoSearch(string search, int id)
+        {
+
+
+            using (var context = new MainDBContext())
+            {
+
+                return
+                    context.Items.Select(x => x)
+                        .Where(x => x.Adress.StartsWith(search) && x.BelongsToUser.Equals(id))
+                        .ToList();
+
+            }
+
+
+        }
+
     }
 }

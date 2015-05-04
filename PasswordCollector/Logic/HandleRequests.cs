@@ -64,5 +64,12 @@ namespace PasswordCollector.Logic
 
         }
 
+        public static List<Item> AutoSearch(string search)
+        {
+
+            return ItemsRepository.AutoSearch(search, GetCurrentUserId());
+
+        }
+
     }
 }
